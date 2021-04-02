@@ -7,7 +7,7 @@ render(){
     let greet = 'Welcome to here'
     let userInfo = {
         uName:'Aysegul', 
-        lastName:'Genc'
+        lastName:'Genc',
         age: 40
     }
 

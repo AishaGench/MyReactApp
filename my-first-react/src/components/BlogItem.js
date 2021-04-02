@@ -4,6 +4,13 @@ import PropTypes from 'prop-types';
 
 class BlogItem extends Component{
 
+    constructor(props){
+        super(props)
+            console.log('Hello from constructor function...')
+            console.log(props)
+        
+    }
+
     static propTypes ={
         blogMessage: PropTypes.string,
         //data: PropTypes.object,
