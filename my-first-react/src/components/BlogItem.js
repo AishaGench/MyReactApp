@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import '../styles/BlogItem.css'
 
 
 class BlogItem extends Component{
@@ -28,7 +29,7 @@ class BlogItem extends Component{
         return(
             <>
              <h2 style={{color:"coral", fontFamily:"Comic Sans"}}>BLOG ITEM</h2>
-            <h3>Title:</h3>
+             <h3 className="subtitle">Title:</h3>
             <h3>Description:{this.props.blogMessage}</h3>
             <p style={myStyle}>{this.props.text}</p>
             <h2>Author Name: {this.props.data.uName} {this.props.data.lastName}</h2>
