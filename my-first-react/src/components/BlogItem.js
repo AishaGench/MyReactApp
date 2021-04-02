@@ -20,13 +20,17 @@ class BlogItem extends Component{
 
 
     render(){
-        console.log(this.props) 
+        console.log(this.props);
+        const myStyle = {
+            color: "coral",
+            backgroundColor: "cyan"
+          }
         return(
             <>
-            <h2>BLOG ITEM</h2>
+             <h2 style={{color:"coral", fontFamily:"Comic Sans"}}>BLOG ITEM</h2>
             <h3>Title:</h3>
             <h3>Description:{this.props.blogMessage}</h3>
-            <p>{this.props.text}</p>
+            <p style={myStyle}>{this.props.text}</p>
             <h2>Author Name: {this.props.data.uName} {this.props.data.lastName}</h2>
 
             </>
