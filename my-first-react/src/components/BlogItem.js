@@ -9,15 +9,25 @@ class BlogItem extends Component{
         super(props)
             console.log('Hello from constructor function...')
             console.log(props)
+            this.state={
+                name:'Aysegul',
+                lastName:'Gench',
+                age:40,
+                address:'77400 Richmond'
+            }
         
     }
 
     static propTypes ={
-        blogMessage: PropTypes.string,
+        blogMessage: PropTypes.string.isRequired,
         //data: PropTypes.object,
         text: PropTypes.string.isRequired,
         data: PropTypes.shape({uName: PropTypes.string.isRequired, age:PropTypes.number})
       };
+
+      buttonClick=()=>{
+          console.log("Hello from BLOG ITEM")
+      }
 
 
     render(){
@@ -33,9 +43,13 @@ class BlogItem extends Component{
             <h3>Description:{this.props.blogMessage}</h3>
             <p style={myStyle}>{this.props.text}</p>
             <h2>Author Name: {this.props.data.uName} {this.props.data.lastName}</h2>
+            <button onClick={this.buttonClick.bind(this)}>ADD</button>
+            <button onClick={this.props.blogClick}>CLICK</button>
+            <hr/>
+            <p>{this.state.name}</p>
 
             </>
-        )
+        );
     }
 }
 export default BlogItem

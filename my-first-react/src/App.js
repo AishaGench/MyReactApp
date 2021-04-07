@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Blog from './components/Blog'
-
+import Counter from './components/Counter'
 
 const User  = {
     name: 'Aysegul',
@@ -21,9 +21,10 @@ function App() {
     <>
     <Blog/>
     <hr/>
+    <Counter></Counter>
+    {/* <Blog/>
     <Blog/>
-    <Blog/>
-    <Blog/>
+    <Blog/> */}
 {/* 
       <h1 id="title">USER INFO</h1>
     <h2>Name: {User.name}</h2>
