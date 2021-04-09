@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Blog from './components/Blog'
 import Counter from './components/Counter'
+import Counter2 from './components/Counter2'
 
 const User  = {
     name: 'Aysegul',
@@ -19,9 +20,10 @@ if(User.isActive){
 function App() {
   return (
     <>
-    <Blog/>
+    {/* <Blog/> */}
     <hr/>
     <Counter></Counter>
+    <Counter2></Counter2>
     {/* <Blog/>
     <Blog/>
     <Blog/> */}

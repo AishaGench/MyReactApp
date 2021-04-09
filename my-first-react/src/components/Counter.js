@@ -2,58 +2,27 @@
 import React, { Component } from 'react'
 
 export default class Counter extends Component {
+    state = {
+        number: 0,
+      };
+
+      increaseState = () => {
+        this.setState({ number: ++this.state.number });
+      };
+      
+      decreaseState = () => {
+        if (!this.state.number == 0) {
+          this.setState({ number: --this.state.number });
+        }
+      };
+
     render() {
         return (
             <div>
-                
+               <h1>{this.state.number}</h1>
+                <button onClick={this.decreaseState}> - </button>
+                <button onClick={this.increaseState}> + </button> 
             </div>
         )
     }
 }
-
-/* export default class counter extends Component {
-    constructor(props){
-        super(props);
-        
-
-    }
-    state ={
-        number:0
-    }
-    counter =() =>{
-        if(this.state.number <= 9){
-            this.setState({
-                number: this.state.number + 1
-            });
-        }
-
-        if(this.state.number === 9){
-            document.body.style.backgroundColor = "coral"
-        }
-
-    }
-    decrease =()=>{
-        if(this.state.number >= -9){
-            this.setState({
-                number: this.state.number - 1
-                
-            })
-        }
-        
-        
-        if(this.state.number === -9){
-            document.body.style.backgroundColor = "violet"
-        }
-    }
-    render() {
-        return (
-            <div>
-               <button onClick ={this.counter}>Increment</button>
-               <button onClick ={this.decrease}>Decrement</button>
-               <p id="result">{this.state.number}</p>
-               
-            </div>
-        )
-    }
-}
- */
