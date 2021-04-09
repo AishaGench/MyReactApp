@@ -1,0 +1,13 @@
+.formField {
+    width: 500px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .formField input {
+    margin-top: 10px;
+    height: 40px;
+    line-height: 25px;
+    width: 100%;
+    text-indent: 10px;
+  }

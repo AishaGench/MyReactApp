@@ -5,6 +5,7 @@ import Form from './Form'
 
 
 export default class Contact extends Component{
+    
     render(){
         return(
             <div>
