@@ -12,18 +12,18 @@ export default class List extends Component {
         console.log(this.props.contacts)
         return (
             <div className="listCompField">
-                
+                <h1>List</h1>
                 <input name="filter" id="filter" placeholder="Search by name or phone"/>
-                <ul >
 
+                <ul >
                 {this.props.contacts.map((item)=>{
                  return(<li>
               <span className="name">{item.name}</span>
               <span className="phone">{item.phone}</span>
                </li>)
               })}
+              
                 </ul>
-
             </div>
         )
     }

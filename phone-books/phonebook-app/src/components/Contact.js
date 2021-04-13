@@ -14,16 +14,22 @@ export default class Contact extends Component{
         ]
       }
 
+      addContact = (data) =>{
+    //       console.log('Hello from CONTACT component...')
+        console.log(data)
+    const {contacts} = this.state
+    contacts.push(data)
+    this.setState({contacts: contacts})
+      }
+
     render(){
         return(
             <div>
                 <List  contacts={this.state.contacts}/>
-                <Form />
+                <Form addContact ={this.addContact}/>
             </div>
-        
-
             
-        )
+        );
     }
 
 
