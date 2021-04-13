@@ -4,6 +4,9 @@
     line-height: 25px;
     width: 100%;
     text-indent: 10px;
+     border: none;
+    border-radius: 1rem;
+    outline: none;
 }
 
 .listCompField{

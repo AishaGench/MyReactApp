@@ -2,15 +2,21 @@ import React, { Component } from 'react'
 import '../styles/Form.css'
 import PropTypes from 'prop-types';
 
+
+
 export default class Form extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            name: "",
+            phone: "",
+        }
+    }
+
     static checkProps ={addContact: PropTypes.func}
 
-    state= {
-        name:'',
-        phone:'',
-      }
-
-      onInputChange = (e) => {
+      onChange = (e) => {
           /*
         console.log(e.target.value)
         if(e.target.name === 'name') {
@@ -24,10 +30,11 @@ export default class Form extends Component {
         this.setState({ [e.target.name]: e.target.value });
       };
 
-      sendForm = (event) => {
-          event.preventDefault();
-          console.log('Form submitted...')
+      sendForm = (e) => {
+          e.preventDefault();
           this.props.addContact({...this.state})
+
+          this.setState({name:'', phone:''})
 
       }
 
@@ -36,13 +43,14 @@ export default class Form extends Component {
         return (
             <form onSubmit={this.sendForm} className="formField">
                 <h2>Form</h2>
-                <input onChange={this.onInputChange} name="name" id="name" placeholder="Enter a name..."/>
 
-                <input onChange={this.onInputChange} name="phone" id="phone" placeholder="Enter a phone number..."/>
+                <input onChange={this.onChange} name="name" id="name" placeholder="Enter a name..." value={this.state.name}/>
+
+                <input onChange={this.onChange} name="phone" id="phone" placeholder="Enter a phone number..." value={this.state.phone}/>
 
                 <button>ADD</button>
-                
+
             </form>
-        );
+        )
     }
 }

@@ -10,16 +10,16 @@ export default class Contact extends Component{
           {name: 'Name 1', phone: '+1234567890'},
           {name: 'Name 2', phone: '+1265482540'},
           {name: 'Name 3', phone: '+9834567890'},
-          {name: 'John', phone: '+5553337678'},
+          {name: 'John ', phone: '+5553337678'},
         ]
       }
 
-      addContact = (data) =>{
-    //       console.log('Hello from CONTACT component...')
-        console.log(data)
+      addContact = (data) => {
+
     const {contacts} = this.state
     contacts.push(data)
-    this.setState({contacts: contacts})
+    this.setState({
+        contacts: contacts})
       }
 
     render(){
