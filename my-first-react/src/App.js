@@ -3,6 +3,7 @@ import './App.css';
 import Blog from './components/Blog'
 import Counter from './components/Counter'
 import Counter2 from './components/Counter2'
+import DataBinding from './components/DataBinding'
 
 const User  = {
     name: 'Aysegul',
@@ -18,12 +19,21 @@ if(User.isActive){
 }
 
 function App() {
+
+  const appJsClick = (text) => {
+    console.log("APP.JS clicked..",text)
+
+  }
+
   return (
     <>
-    {/* <Blog/> */}
+    <DataBinding appJsClick = {appJsClick} />
     <hr/>
-    <Counter></Counter>
-    <Counter2></Counter2>
+    
+    {/* <Blog/> */}
+   
+    {/* <Counter></Counter> */}
+    {/* <Counter2></Counter2> */}
     {/* <Blog/>
     <Blog/>
     <Blog/> */}
