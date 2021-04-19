@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <h1>APP Component</h1>
       <hr/>
-      <Main testProps={{message:"Hello from APP"}}/>
+      <Main testProps={"Hello from APP"}/>
     </div>
   );
 }
