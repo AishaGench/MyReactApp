@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.postContainer {
+  max-height: 250px;
+  overflow: auto;
+  border: 2px solid purple;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
