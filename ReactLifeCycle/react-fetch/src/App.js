@@ -1,6 +1,7 @@
 import UserList from "./UserList";
 import About from './About';
 import "./App.css";
+import Error from "./Error"
 import { BrowserRouter, Route, Link, NavLink, Redirect, Switch } from "react-router-dom";
 import React, {Component} from 'react';
 
@@ -13,7 +14,6 @@ const Profile = (dataFromRoute) =>{
   console.log(dataFromRoute)
   return <h1>Welcome Profile Page</h1>
 }
-
 
 class App extends Component {
   state={loggedIn:false}
@@ -39,7 +39,7 @@ class App extends Component {
           <NavLink activeClassName="activeClass" to="/AboutPage/33/33">About 333</NavLink><br/>
           <NavLink activeClassName="activeClass" to="/Profile">Profile</NavLink><br/>
           <input type="button" onClick={this.onClickButton} value={this.state.loggedIn ? "Logout":"Login"}/>
-         
+          <Switch>
             <Route path="/" exact strict render={()=>{return <h1>Welcome to Home Page </h1>}}/>
             <Route path="/Contact" exact strict render={()=>{return <h1>Contact Page </h1>}}/>
             <Route path="/AboutPage" exact strict component={About}/>
@@ -52,7 +52,8 @@ class App extends Component {
             <Route path="/Profile" exact strict render={()=>{
               return this.state.loggedIn ? <Profile /> : <Redirect to="/"/>
             }}/> 
-            
+            <Route component={Error} />
+          </Switch>
         </div>
       </BrowserRouter>
     );
