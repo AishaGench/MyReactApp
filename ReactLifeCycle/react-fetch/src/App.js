@@ -26,18 +26,22 @@ class App extends Component {
   render(){
     return (
       <BrowserRouter>
+      <header>
         <div className="App">
           <h1>APP Component</h1>
-          <Link to="/">Home</Link><br/>
-          <Link to="/Contact">Contact</Link><br/>
-          <Link to="/AboutPage">About</Link><br/>
-          <Link to="/AboutPage/1">About 1</Link><br/>
-          <Link to="/UserInfo">User Info</Link><br/>
+          <nav><ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/Contact">Contact</Link></li>
+            <li><Link to="/AboutPage">About</Link></li>
+            <li><Link to="/AboutPage/1">About 1</Link></li>
+            <li><Link to="/UserInfo">User Info</Link></li>
+            <li><NavLink activeClassName="activeClass" to="/AboutPage/22">About 22</NavLink></li>
+            <li><NavLink activeClassName="activeClass" to="/AboutPage/33/33">About 333</NavLink></li>
+            <li><NavLink activeClassName="activeClass" to="/Profile">Profile</NavLink></li>
+              </ul>
+          </nav>
           {/* <NavLink activeStyle={{color:"red"}} to="/AboutPage/22">About 22</NavLink><br/>
           <NavLink activeStyle={{color:"red"}} to="/AboutPage/33/33">About 333</NavLink> */}
-          <NavLink activeClassName="activeClass" to="/AboutPage/22">About 22</NavLink><br/>
-          <NavLink activeClassName="activeClass" to="/AboutPage/33/33">About 333</NavLink><br/>
-          <NavLink activeClassName="activeClass" to="/Profile">Profile</NavLink><br/>
           <input type="button" onClick={this.onClickButton} value={this.state.loggedIn ? "Logout":"Login"}/>
           <Switch>
             <Route path="/" exact strict render={()=>{return <h1>Welcome to Home Page </h1>}}/>
@@ -55,6 +59,7 @@ class App extends Component {
             <Route component={Error} />
           </Switch>
         </div>
+        </header>
       </BrowserRouter>
     );
   }
