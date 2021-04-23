@@ -5,7 +5,8 @@ export default class ClassComponent extends Component {
     super(props)
   
     this.state = {
-       counter:0
+       counter:0 ,
+       loading: true
     }
   }
   // state ={counter:0}
@@ -18,9 +19,15 @@ export default class ClassComponent extends Component {
   decrease = () => {
     this.setState({counter: this.state.counter-1})
   }
+componentDidMount() {
+  console.log("Class=> componentDidMount")
+}
+componentDidUpdate(prevProps, prevState) {
+  console.log("Class=> componentDidUpdate")
+}
 
   render() {
-    console.log('Class Component => ', this.state.counter )
+    //console.log('Class Component => ', this.state.counter )
     return (
       <div>
         <h1>Class Component</h1>
