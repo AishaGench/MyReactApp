@@ -28,14 +28,14 @@ componentDidUpdate() {
     this.setState({timer: this.state.timer +1})
   }, 1000);
 }
-componentDidUpdate(prevProps, prevState) {
-  //console.log("Class=> componentDidUpdate")
-}
+// componentDidUpdate(prevProps, prevState) {
+//   //console.log("Class=> componentDidUpdate")
+// }
 componentWillUnmount() {
   console.log("componentWillUnmount is run...")
   clearInterval(this.myTimer)
 }
-}
+
 
   render() {
     //console.log('Class Component => ', this.state.counter )
