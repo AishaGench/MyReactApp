@@ -22,14 +22,19 @@ export default class ClassComponent extends Component {
 componentDidMount() {
   console.log("Class=> componentDidMount")
 }
-componentDidUpdate(prevProps, prevState) {
-  //console.log("Class=> componentDidUpdate")
-}
 componentDidUpdate() {
-  console.log("Class=> componentDidUpdate")
+  //console.log("Class=> componentDidUpdate")
   this.myTimer = setInterval(() => {
     this.setState({timer: this.state.timer +1})
   }, 1000);
+}
+componentDidUpdate(prevProps, prevState) {
+  //console.log("Class=> componentDidUpdate")
+}
+componentWillUnmount() {
+  console.log("componentWillUnmount is run...")
+  clearInterval(this.myTimer)
+}
 }
 
   render() {
