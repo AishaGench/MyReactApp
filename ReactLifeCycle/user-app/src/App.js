@@ -9,10 +9,11 @@ const data = [
 ]
 function App() {
   const [users, setUsers] = useState(data)
+  const changeColor = (_id, _color) => setUsers(users.map(item=>item.id === _id ? {...item, color:_color}:item))
   return (
     <div className="App">
      <h1>Welcome</h1>
-     <UserList users={users}/>
+     <UserList users={users} changeColor={changeColor}/>
     </div>
   );
 }
