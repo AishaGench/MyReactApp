@@ -6,13 +6,16 @@ import { useState } from 'react'
 function App() {
   const divStyle = {width:"50%", float:"left", height:"100vh"}
   const bgLeft = { backgroundColor: "#e8cebf"}
-  const [showComponent, setShowComponent] = useState(true)
+  const [showComponent, setShowComponentC] = useState(true)
+  const [showComponent, setShowComponentF] = useState(true)
   return (
     <div className="App">
-      <h1>{showComponent ? "Component ON" :"Component OFF"}</h1>
-      <button onClick ={()=>setShowComponent(!showComponent)}>Component Toggle</button><br/>
+      <h1>{showComponentC ? "Class Component ON" :"Class Component OFF"}
+      {showComponentF ? "Functional Component ON" :"Functional Component OFF"}</h1>
+      <button onClick ={()=>setShowComponentC(!showComponentC)}>Class Component Toggle</button>
+      <button onClick ={()=>setShowComponentF(!showComponentf)}>Functional Component Toggle</button><br/>
       {showComponent ? <div style={{...divStyle, ...bgLeft}}><ClassComponent /></div>:""}
-      <div style={divStyle}><FunctionalComponent /></div>
+      {showComponentF ? <div style={divStyle}><FunctionalComponent /></div> :""}
     </div>
   );
 }
