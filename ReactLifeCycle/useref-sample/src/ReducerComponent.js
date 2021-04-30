@@ -1,24 +1,14 @@
 import React, { useState, useReducer } from 'react'
+import {DogReducer} from './reducers/DogReducer'
 
 const myInitialState = {data: "", loading: "", error: ""}
-
-const reducer =(state, action) =>{
-    switch (action.type) {
-        case "FETCH_START": return{...state, data:"", loading: true, error:""}
-        case "FETCH_SUCCESS": return {...state, data:action.payload,loading:false, error:""};
-        case "FETCH_ERROR": return {...state, loading:false, error:action.payload};
-    
-        default: return state;
-            
-    }
-}
 
 function ReducerComponent() {
     // const [data, setData] = useState("")
     // const [loading, setLoad] = useState(false)
     // const [error, setError] = useState("")
 
-    const [state, dispatch] = useReducer(reducer, myInitialState)
+    const [state, dispatch] = useReducer(DogReducer, myInitialState)
 
     const fetchingDog = () =>{
         // setLoad("")
