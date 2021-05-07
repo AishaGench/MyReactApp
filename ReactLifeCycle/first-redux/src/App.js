@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import {createStore} from 'redux'
+import { act } from 'react-dom/test-utils';
+
+function reducer(state,action){
+  console.log('Action parameters =>', action)
+  if(action.type ==='changeTheState'){
+    return action.payload.newState
+  }
+  return 'State1223344'
+}
+const myStore = createStore(reducer)
+console.log('Old State =>', myStore.getState())
+
+const action = {type:'changeTheState',payload:{newState:'My new State...'}}
+
+myStore.dispatch(action)
+myStore.dispatch(action)
+myStore.dispatch(action)
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>App Component</h1>
     </div>
   );
 }
