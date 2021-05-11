@@ -27,26 +27,29 @@ function App() {
 
   return (
     <>
-    <DataBinding appJsClick = {appJsClick} />
-    <hr/>
+    <div>
+      
+    </div>
+    {/* <DataBinding appJsClick = {appJsClick} />
+    <hr/> */}
     
-    {/* <Blog/> */}
-   
-    {/* <Counter></Counter> */}
-    {/* <Counter2></Counter2> */}
-    {/* <Blog/>
     <Blog/>
-    <Blog/> */}
-{/* 
-      <h1 id="title">USER INFO</h1>
+   
+    <Counter></Counter>
+    <Counter2></Counter2> 
+    <Blog/>
+    <Blog/>
+    <Blog/>
+
+      {/* <h1 id="title">USER INFO</h1>
     <h2>Name: {User.name}</h2>
     <h2>LastName: {User.lastName}</h2>
     <h2>Age: {User.age}</h2>
     <h2>Email: {User.email}</h2>
     <p>How are you?</p>
     {User.isActive ? <p>How are you? {User.name} </p> : <p>How are you? Guest</p>}
-    <img src="https://neilpatel.com/wp-content/uploads/2017/09/image-editing-tools.jpg" alt="img" width="80%"/>
- */}
+    <img src="https://neilpatel.com/wp-content/uploads/2017/09/image-editing-tools.jpg" alt="img" width="80%"/> */}
+
     </>
   );
 }

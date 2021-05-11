@@ -5,7 +5,8 @@ export default class DataBinding extends Component {
     constructor(props){
         super(props)
         console.log("Constructor is running...")
-        this.buttonClick = this.buttonClick.bind(this)
+        // BIND- III
+        // this.buttonClick = this.buttonClick.bind(this)
         console .log(this.props)
         this.state = {}
     }
@@ -20,7 +21,11 @@ export default class DataBinding extends Component {
         return (
             <div>
                 <h1>DataBinding Component</h1>
-                <button onClick = {this.buttonClick.bind(this)} >CLICK</button>
+                {/* BIND -I */}
+                {/* <button onClick = {this.buttonClick.bind(this)} >CLICK</button> */}
+
+                {/* BIND -II */}
+                <button onClick = {()=>{this.buttonClick.bind(this)}} >CLICK</button>
                 <h2></h2>
             </div>
 
