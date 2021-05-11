@@ -4,8 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider} from 'react-redux'
-import { createStore, combineReducers } from 'redux';
+import { createStore } from 'redux'
 import userReducer from './reducers/userReducer'
+import productReducer from './reducers/productReducer'
+import rootReducer from './reducers/rootReducer'
 
 function reducer (state, action){
   console.log("Action parameters =>", action)
@@ -18,13 +20,6 @@ function reducer (state, action){
 }
 
 
-function productReducer (state=[], action) {
-  return 'state'
-}
-
-const rootReducer = combineReducers({
-  userReducer, productReducer
-})
 
 const myStore = createStore(rootReducer, {
   userReducer: "Tommy",
@@ -59,4 +54,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
