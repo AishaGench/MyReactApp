@@ -12,7 +12,10 @@ function reducer (state, action){
 }
 
 function userReducer (state="", action) {
-  return 'state'
+  switch (action.type) {
+    case "userUpdate": return action.payload.user;
+    default:  return 'state'
+  }
 }
 function productReducer (state=[], action) {
   return 'state'
@@ -27,11 +30,15 @@ const myStore = createStore(rootReducer, {
   productReducer: [
     {name: "Jane", lastName: "Jackson"}
   ]
-})
-//console.log('OLD State=>',myStore.getState())
+},
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+console.log('OLD State=>',myStore.getState())
 
 const action = { type:'changeTheState', payload:{newState:"My new State..."}}
 const actionDeposit = { type: 'deposit', payload: 10}
+const actionUser ={type: "userUpdate", payload:{user:'Emma'}}
+myStore.dispatch(actionUser)
 myStore.subscribe(()=>{
   //alert("Store has been updated")
 })
