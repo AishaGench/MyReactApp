@@ -1,6 +1,6 @@
 import './App.css';
 import {connect} from 'react-redux'
-import {updateUser, addUser} from './actions/userAction'
+import {updateUser, addUser,deleteUser} from './actions/userAction'
 
 
 function App(props) {
@@ -12,11 +12,12 @@ function App(props) {
       <br/>
       <button onClick={()=> props.updateUser("Sevde")}>USER UPDATE</button>
       <button onClick={()=> props.addUser("Beyza")}>ADD USER</button>
+      <button onClick={()=> props.deleteUser()}>DELETE USER</button>
     </div>
   );
 }
 const mapDispatchToProps ={
-  updateUser, addUser
+  updateUser, addUser,deleteUser
 }
 const mapStateToProps = state =>{
   return state
