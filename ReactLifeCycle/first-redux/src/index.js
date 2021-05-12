@@ -9,7 +9,7 @@ import userReducer from './reducers/userReducer'
 import productReducer from './reducers/productReducer'
 import rootReducer from './reducers/rootReducer'
 
-function reducer (state, action){
+function reducer (state, action){ 
   console.log("Action parameters =>", action)
   if(action.type ==='changeTheState'){
     return action.payload.newState
@@ -18,8 +18,6 @@ function reducer (state, action){
   }
   return 'State12346'
 }
-
-
 
 const myStore = createStore(rootReducer, {
   userReducer: "Tommy",

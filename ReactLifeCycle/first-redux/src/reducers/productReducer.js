@@ -1,3 +1,3 @@
 export default function productReducer (state=[], action) {
-    return 'state'
+    return 'state Product Reducer'
   }
