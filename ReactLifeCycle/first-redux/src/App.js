@@ -1,5 +1,6 @@
 import './App.css';
 import {connect} from 'react-redux'
+import {updateUser} from './actions/userAction'
 
 function App(props) {
   console.log("App Props=>", props)
@@ -9,7 +10,10 @@ function App(props) {
     </div>
   );
 }
+const mapDispatchToProps ={
+  updateUser
+}
 const mapStateToProps = state =>{
   return state
 }
-export default connect(mapStateToProps) (App);
+export default connect(mapStateToProps, mapDispatchToProps) (App);
