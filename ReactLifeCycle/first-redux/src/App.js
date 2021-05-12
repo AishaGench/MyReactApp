@@ -7,6 +7,9 @@ function App(props) {
   return (
     <div className="App">
       <h1>App Component</h1>
+      {props.userReducer}
+      <br/>
+      <button onClick={()=> props.updateUser("Sevde")}>UPDATE USER</button>
     </div>
   );
 }
